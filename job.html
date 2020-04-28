@@ -18,7 +18,6 @@
         font-family: sans-serif;
         vertical-align: baseline;
         background: transparent;
-        box-sizing: border-box;
     }
     li {
         list-style: none;
@@ -56,22 +55,28 @@
         color: #ffffff;
     }
     .wrapper {
-        display: inline-flex;
+        display: inline-block;
+        width:100%;
     }
     .left {
         width: 25%;
         padding: 0 25px 0 0;
+        display: inline-block;
+        float: left;
     }
     .middle {
         width: 50%;
         box-shadow: 0 0px 3px rgba(0, 0, 0, 0.25);
         background: #ffffff;
         padding: 30px 30px 0 30px;
-        height: 1300px;
+        display: inline-block;
+        float: left;
     }
     .right {
         width: 25%;
         padding: 0 0 0 25px;
+        display: inline-block;
+        float: left;
     }
     @media screen and (max-width: 800px) {
         .left, .middle, .right {
@@ -82,7 +87,7 @@
             display: block;
         }
         .main {
-            padding: 0 0 0 25px;
+            padding: 0 20px;
         }
     }
     .filters {
@@ -195,11 +200,11 @@
     }
 
     .building {
-        display: inline-flex;
+        display: inline-block;
     }
     
     .country {
-        display: inline-flex;
+        display: inline-block;
         padding-left: 10px;
     }
     .blue {
@@ -228,13 +233,14 @@
         background: #56D4FB;
     }
     .skillset {
-        display: inline-flex;
+        display: inline-block;
     }
     .skillset > li {
         border: 1px solid #ccc;
         border-radius: 15px;
         padding: 5px 10px;
         margin: 0 10px 7px 0;
+        display: inline-block;
     }
     /*right*/
     .signup-box {
@@ -283,7 +289,6 @@
         height:50px;
         line-height: 50px;
         padding: 0 7vw;
-        width: 100%;
         background-color: #ffffff;
         position: sticky;
     }
@@ -359,6 +364,9 @@
     .nav > #nav-check:checked ~ .nav-links {
         height: calc(50vh);
         overflow-y: auto;
+    }
+    .footer {
+        display: inline-block;
     }
 }
 </style>
