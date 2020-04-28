@@ -255,21 +255,6 @@
     .trending-jobs {
         margin-top: 40px;
     }
-    /* Nav bar*/
-    .nav {
-        position: sticky;
-        top: 0;
-        line-height: 50px;
-        padding: 0 7vw;
-        background: #ffffff;
-    }
-    .menu {
-        display: inline-flex;
-        float: right;
-    }
-    ul.menu > li {
-        margin: 0 0 0 4vw;
-    }
     /*footer*/
     .footer {
         margin-top: 70px;
@@ -292,16 +277,113 @@
     .social-media {
         font-size: 22px;
     }
+    /*Nav bar*/
+    .nav {
+        top: 0;
+        height:50px;
+        line-height: 50px;
+        padding: 0 7vw;
+        width: 100%;
+        background-color: #ffffff;
+        position: sticky;
+    }
+
+    .nav > .nav-header {
+        display: inline;
+    }
+
+    .nav > .nav-header > .nav-title {
+        display: inline-block;
+        color: #fff;
+        padding: 10px 0 0 0;
+    }
+
+    .nav > .nav-btn {
+        display: none;
+    }
+
+    .nav > .nav-links {
+        /* display: inline; */
+        float: right;
+        font-size: 18px;
+    }
+
+    .nav > .nav-links > a {
+        display: inline-block;
+        padding-left: 40px;
+        text-decoration: none;
+    }
+
+    .nav > #nav-check {
+        display: none;
+    }
+
+@media (max-width:600px) {
+    .nav > .nav-btn {
+        display: inline-block;
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .nav > .nav-btn > label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+    }
+
+    .nav > .nav-btn > label > span {
+        display: block;
+        width: 25px;
+        height: 10px;
+        border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+        position: absolute;
+        display: block;
+        width: 100%;
+        background-color: #ffffff;
+        height: 0px;
+        transition: all 0.3s ease-in;
+        overflow-y: hidden;
+        top: 50px;
+        left: 0px;
+    }
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+        height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+        height: calc(50vh);
+        overflow-y: auto;
+    }
+}
 </style>
 <body>
     <div class="nav">
-        <img src="./logo.png">
-        <ul class=menu>
-            <li><a href="#">HOW IT WORKS</a></li>
-            <li><a href="#">BROWSE</a></li>
-            <li><a href="#">SEARCH</a></li>
-            <li><a href="#">My Account</a></li>
-        </ul>
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                <img src="./logo.png">
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+            </label>
+        </div>
+        
+        <div class="nav-links">
+            <a href="#">HOW IT WORKS</a>
+            <a href="#">BROWSE</a>
+            <a href="#">SEARCH</a>
+            <a href="#">My Account</a>
+        </div>
     </div>
 
     <div class="main">
